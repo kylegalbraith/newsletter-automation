@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "bluebird": "^3.5.1",
-    "google-spreadsheet": "^2.0.4",
+    "google-spreadsheet": "^2.0.5",
     "mailchimp-api-v3": "^1.12.0"
   }
 }
