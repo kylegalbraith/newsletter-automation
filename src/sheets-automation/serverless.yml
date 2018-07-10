@@ -1,0 +1,15 @@
+service: sheets-automation
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: us-west-2    
+
+functions:
+  generate-next-newsletter:
+    handler: handler.generateNewsletter
+    events:
+      - schedule: cron(0 19 ? 1-10 THU *)
+    environment:
+      googleSheetId: <your-google-sheet-id>
+      mailChimpKey: <your-mailchimp-api-key>
+      mailchimpListId: <your-mailchimp-unique-list-id>

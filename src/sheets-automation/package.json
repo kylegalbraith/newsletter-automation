@@ -1,0 +1,17 @@
+{
+  "name": "sheets-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "google-spreadsheet": "^2.0.4",
+    "mailchimp-api-v3": "^1.12.0"
+  }
+}
