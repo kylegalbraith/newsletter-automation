@@ -4,14 +4,14 @@ module.exports = class MailchimpDelivery {
     }
 
     saveTemplate(name, markup) {
-        return mailChimpClient.post("/templates", {
+        return this.mailChimpClient.post("/templates", {
             name: name,
             html: markup
         });
     }
 
     createRegularCampaign(recipientListId, title, subjectLine, templateId) {
-        return mailChimpClient.post("/campaigns", {
+        return this.mailChimpClient.post("/campaigns", {
             type: "regular",
             recipients: {
               list_id: recipientListId
