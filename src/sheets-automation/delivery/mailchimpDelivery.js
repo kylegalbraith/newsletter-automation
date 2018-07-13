@@ -19,7 +19,7 @@ module.exports = class MailchimpDelivery {
             settings: {
               title: title,
               subject_line: subjectLine,
-              template_id: data.id
+              template_id: templateId
             }
           });
     }
