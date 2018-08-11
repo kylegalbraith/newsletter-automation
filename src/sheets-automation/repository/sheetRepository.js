@@ -1,9 +1,9 @@
 var creds = require('../g-auth.json');
 
 module.exports = class SheetRepository {
-    constructor(googleSpreadSheetClient) {
+    constructor(googleSpreadSheetClient, specialRows) {
         this.sheetClient = googleSpreadSheetClient;
-        this.specialRows = ["para1", "para2", "para3", "subject"];
+        this.specialRows = specialRows;
     }
 
     loadLatestSheet(callback) {

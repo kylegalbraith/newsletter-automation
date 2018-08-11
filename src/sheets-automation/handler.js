@@ -12,7 +12,7 @@ module.exports.generateNewsletter = (event, context, callback) => {
   let mailchimpApiKey = process.env.mailChimpKey
   let mailchimpList = process.env.mailchimpListId;
 
-  var sheetRepo = new SheetRepository(new GoogleSpreadsheet(sheetId));
+  var sheetRepo = new SheetRepository(new GoogleSpreadsheet(sheetId), new ["para1", "para2", "para3", "subject"]);
   var newsletterGenerator = new NewsletterGenerator();
 
   sheetRepo.loadLatestSheet(function (data) {
