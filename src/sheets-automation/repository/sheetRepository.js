@@ -21,7 +21,11 @@ module.exports = class SheetRepository {
                     if (rows != null) {
                         resultObj['volume'] = rows[0].volume;
                         this.specialRows.forEach(field => {
-                            resultObj[field] = rows.find(r => r.category.toLowerCase() === field).text;
+                            let fieldInSheet = rows.find(r => r.category.toLowerCase() === field);
+                            if (fieldInSheet)
+                                resultObj[field] = rows.find(r => r.category.toLowerCase() === field).text;
+                            else
+                                console.warn(`Special field, ${field} does not exist in sheet`);
                         });
                     }
 
