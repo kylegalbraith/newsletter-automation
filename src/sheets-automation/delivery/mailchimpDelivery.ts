@@ -3,20 +3,18 @@ import Mailchimp from "mailchimp-api-v3";
 export class MailchimpDelivery {
   private readonly templateUrl = "/templates";
   private readonly campaignsUrl = "/campaigns";
-  private mailChimpClient: Mailchimp;
 
-  constructor(mailChimpClient: Mailchimp) {
-    this.mailChimpClient = mailChimpClient;
+  constructor (private mailChimpClient: Mailchimp) {
   }
 
-  saveTemplate(name: string, markup: string) {
+  saveTemplate (name: string, markup: string) {
     return this.mailChimpClient.post(this.templateUrl, {
       name: name,
       html: markup
     });
   }
 
-  createRegularCampaign(
+  createRegularCampaign (
     recipientListId: string,
     title: string,
     subjectLine: string,
