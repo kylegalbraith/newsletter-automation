@@ -57,7 +57,11 @@ typings/
 # dotenv environment variables file
 .env
 
+.idea
+*.log
+
 # next.js build output
 .next
 
 yarn.lock
+**/dist

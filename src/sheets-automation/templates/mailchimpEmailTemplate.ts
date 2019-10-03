@@ -1,11 +1,10 @@
-module.exports = class MailChimpEmailTemplate {
-	/* 
-	 * Replace this email template with your own MailChimp template.
-	 * This template should contain the ##replace...## tags that you want to
-	 * replace during generation.
-	*/
-    getEmailTemplate() {
-        var template = `<!doctype html>
+/*
+ * Replace this email template with your own MailChimp template.
+ * This template should contain the ##replace...## tags that you want to
+ * replace during generation.
+ */
+export function getEmailTemplate(): string {
+  return `<!doctype html>
 		<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 		
 		<head>
@@ -732,7 +731,7 @@ module.exports = class MailChimpEmailTemplate {
 		
 		<body>
 			<!--*|IF:MC_PREVIEW_TEXT|*-->
-			<!--[if !gte mso 9]><!---->
+			<!--[if !gte mso 9]>-->
 			<span class="mcnPreviewText" style="display:none; font-size:0px; line-height:0px; max-height:0px; max-width:0px; opacity:0; overflow:hidden; visibility:hidden; mso-hide:all;">*|MC_PREVIEW_TEXT|*</span>
 			<!--<![endif]-->
 			<!--*|END:IF|*-->
@@ -1340,11 +1339,8 @@ module.exports = class MailChimpEmailTemplate {
 		
 		</html>
         `;
+}
 
-        return template;
-	}
-	
-	getFormattedArticle(link, title, text) {
-		return `<a href='${link}?utm_source=newsletter&utm_medium=email&utm_campaign=Learn%20By%20Doing' target='_blank' style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #2BAADF;font-weight: normal;text-decoration: underline;'>${title}</a><br>${text}<br><br>`;               
-	}
+export function getFormattedArticle(link: string, title: string, text: string) {
+  return `<a href='${link}?utm_source=newsletter&utm_medium=email&utm_campaign=Learn%20By%20Doing' target='_blank' style='mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #2BAADF;font-weight: normal;text-decoration: underline;'>${title}</a><br>${text}<br><br>`;
 }
