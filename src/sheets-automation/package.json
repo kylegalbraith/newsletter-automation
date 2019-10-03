@@ -2,9 +2,10 @@
   "name": "sheets-automation",
   "version": "1.0.0",
   "description": "",
-  "main": "handler.js",
+  "main": "handler.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +14,15 @@
     "google-spreadsheet": "^2.0.8",
     "lodash": "^4.17.15",
     "mailchimp-api-v3": "^1.13.1"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.33",
+    "@types/chai": "^4.2.3",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.7.9",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "prettier": "^1.18.2",
+    "typescript": "^3.6.3"
   }
 }
