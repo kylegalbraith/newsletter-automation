@@ -3,6 +3,7 @@
     "test": "mocha"
   },
   "dependencies": {
+    "minimist": "^1.2.5",
     "node-forge": "^0.10.0"
   },
   "devDependencies": {
